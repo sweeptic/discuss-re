@@ -1,8 +1,10 @@
 import * as actions from '@/actions';
+import { auth } from '@/auth';
+import Profile from '@/components/profile';
 import { Button } from '@heroui/button';
 
 export default async function Home() {
-  //   const session = await auth();
+  const session = await auth();
 
   return (
     <div>
@@ -14,9 +16,9 @@ export default async function Home() {
         <Button type="submit">Sign Out</Button>
       </form>
 
-      {/* {session?.user ? <div>Signed In {JSON.stringify(session.user)}</div> : <div>Signed Out</div>} */}
+      {session?.user ? <div>Signed In {JSON.stringify(session.user)}</div> : <div>Signed Out</div>}
 
-      {/* <Profile /> */}
+      <Profile />
     </div>
   );
 }
