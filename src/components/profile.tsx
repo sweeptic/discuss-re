@@ -5,8 +5,6 @@ import { useSession } from 'next-auth/react';
 export default function Profile() {
   const session = useSession();
 
-  console.log('session', session);
-
   return (
     <div>
       From useSession: {JSON.stringify(session.data?.user)}user is {session.data?.user ? '' : 'NOT'} signed in
